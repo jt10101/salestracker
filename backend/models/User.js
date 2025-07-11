@@ -36,19 +36,10 @@ const userSchema = new mongoose.Schema(
       trim: true,
       minLength: [2, "Expecting min. 2 characters"],
     },
-    gender: {
+    role: {
       type: String,
-      trim: true,
-      enum: {
-        values: ["M", "F"],
-        message: "Gender must be one of the stored gender types",
-      },
+      enum: ["IC", "Supervisor"],
     },
-    profilePhoto: {
-      type: String,
-      default: "https://www.gravatar.com/avatar/?d=mp",
-    },
-    defaultShippingAddress: { type: String, trim: true },
   },
   { timestamps: true }
 );
